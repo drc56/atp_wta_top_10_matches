@@ -212,7 +212,7 @@ def top_10_match_breakdown(
 
     top_10_df.plot.pie(y="count", label="QF or Later Match", autopct=val_percent_fmt)
     file_name = (
-        IMAGE_PREFIX + "ATP" if tour == TourEnum.ATP else "WTA"
+        IMAGE_PREFIX + ("ATP" if tour == TourEnum.ATP else "WTA")
     ) + "_qf_or_later_non_major.png"
     plt.savefig(file_name)
 
