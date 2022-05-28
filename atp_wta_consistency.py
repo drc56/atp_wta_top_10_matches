@@ -75,7 +75,7 @@ GS_LIST = [
 
 RELEVANT_ROUNDS = ['QF', 'SF', 'F']
 LOOKUP_TABLE = {TourEnum.ATP : ATP_MASTERS_GS_TOURNAMENT_LIST, TourEnum.WTA : WTA_1000_GS_LOOKUP}
-
+IMAGE_PREFIX = 'images/'
 #HELPER COL IDS
 TOURNEY_ID = 1
 WINNER_RANK = 45
@@ -173,7 +173,11 @@ def top_10_match_breakdown(
     tourney_type_df.plot.pie(
         y="count", label="Tournament Type", autopct=val_percent_fmt
     )
-    file_name = ("ATP" if tour == TourEnum.ATP else "WTA") + "_tournament_breakdown.png"
+    file_name = (
+        IMAGE_PREFIX
+        + ("ATP" if tour == TourEnum.ATP else "WTA")
+        + "_tournament_breakdown.png"
+    )
     plt.savefig(file_name)
 
     # Percentage of Top 10 Matches in QF, SF, Final
@@ -187,7 +191,11 @@ def top_10_match_breakdown(
     )
 
     top_10_df.plot.pie(y="count", label="QF or Later Match", autopct=val_percent_fmt)
-    file_name = ("ATP" if tour == TourEnum.ATP else "WTA") + "_qf_or_later_all.png"
+    file_name = (
+        IMAGE_PREFIX
+        + ("ATP" if tour == TourEnum.ATP else "WTA")
+        + "_qf_or_later_all.png"
+    )
     plt.savefig(file_name)
 
     # Non Majors QF or later
@@ -204,7 +212,7 @@ def top_10_match_breakdown(
 
     top_10_df.plot.pie(y="count", label="QF or Later Match", autopct=val_percent_fmt)
     file_name = (
-        "ATP" if tour == TourEnum.ATP else "WTA"
+        IMAGE_PREFIX + "ATP" if tour == TourEnum.ATP else "WTA"
     ) + "_qf_or_later_non_major.png"
     plt.savefig(file_name)
 
