@@ -11,7 +11,7 @@
 - [ ] Make an input json file for the analysis, or some better way of passing in inputs
 - [ ] Clean up the plot generation functions a bit (some reuse code)
 - [ ] Is there a better way than QF,SF,F to determine how far "top 10 players are making it"
-
+- [ ] Count top 10s in the tournaments and try to filter there
 # Thanks
 
 Big thanks to https://www.tennisabstract.com/ for there free databases found here:

@@ -49,8 +49,7 @@ WTA_SEASON_FILES = [
 
 # WTA BIG TOURNAMENT LOOKUP
 WTA_1000_GS_LOOKUP = [
-    "Dubai"
-    "Doha"
+    "Doha",
     "Australian Open",
     "Indian Wells", 
     "Miami", 
@@ -60,7 +59,7 @@ WTA_1000_GS_LOOKUP = [
     "Roland Garros",
     "Wimbledon",
     "Montreal",
-    "Toronto"
+    "Toronto",
     "Cincinnati",
     "Us Open",
     "Wuhan",
@@ -235,7 +234,7 @@ def main():
         WTA_RESULTS_FILE, WTA_SEASON_FILES, TourEnum.WTA
     )
     logging.info(f"Total number of top 10 WTA Matches {len(wta_top_10_matches)}")
-
+    print(wta_qf_later.to_string())
     top_10_match_breakdown(wta_top_10_matches, wta_qf_later, TourEnum.WTA)
 
 
